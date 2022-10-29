@@ -1,0 +1,20 @@
+@import "src/styles/styles";
+
+.top-section {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 100vh;
+  font-family: $main_font-family;
+  color: $color_white;
+  padding-bottom: 120px;
+  order: 1;
+
+  .top-section__container{
+    margin-top: 32%;
+    font-family: $main_font-family;
+    color: $color_white;
+    .top-section__text{
+      margin: 2% 0;
+    }
+  }
+}

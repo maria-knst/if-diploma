@@ -1,0 +1,30 @@
+@import "src/styles/styles";
+
+
+.header{
+  padding: 1% 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4%;
+
+  $width: 100%;
+
+  .headerItem{
+    font-family: $main_font-family;
+    color: $color_white;
+    width: $width /3;
+    .headerList{
+      padding: 0 4%;
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+      align-items: center;
+      li{
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+}
