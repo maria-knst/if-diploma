@@ -1,7 +1,23 @@
 $color_white: #FFFFFF;
+$color_black: #000F08;
+
+
 $main_font-family: 'Roboto', sans-serif;
 
 .container{
   width: 90%;
   margin: 0 auto;
+}
+
+
+@mixin _1240 {
+  @media screen and (max-width: 1240px) {
+    @content;
+  }
+}
+
+@mixin _600 {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
 }

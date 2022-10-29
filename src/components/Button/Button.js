@@ -4,9 +4,11 @@ import './Button.scss'
 
 const Button = ({text, color}) => {
 
+    const borderWidth = (window.screen.width < 600) ? 1 : 2;
+
     const divStyle = {
         color: `${color}`,
-        border: `2px solid ${color}`,
+        border: `${borderWidth}px solid ${color}`,
     };
 
 

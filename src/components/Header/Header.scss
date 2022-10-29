@@ -1,7 +1,6 @@
 @import "src/styles/styles";
 
-
-.header{
+.header {
   padding: 1% 0;
   display: flex;
   justify-content: space-between;
@@ -10,21 +9,97 @@
 
   $width: 100%;
 
-  .headerItem{
+  .headerItem {
     font-family: $main_font-family;
     color: $color_white;
-    width: $width /3;
-    .headerList{
+    width: $width / 3;
+    .headerMenu {
+      display: none;
+    }
+    .headerList {
       padding: 0 4%;
       display: flex;
       justify-content: space-around;
       list-style: none;
       align-items: center;
-      li{
+      li {
         display: flex;
         align-items: center;
+        .bagIcon {
+          display: none;
+        }
+      }
+    }
+
+    $nav_width: 40px;
+    @include _1240 {
+      .headerMenu {
+        display: block;
+        content: "";
+        width: $nav_width;
+        height: 4px;
+        position: relative;
+        background: $color_white;
+        margin: 0 8% 8px;
+      }
+      .headerMenu:before {
+        content: "";
+        width: $nav_width;
+        height: 4px;
+        position: absolute;
+        top: -10px;
+        background: $color_white;
+      }
+      .headerMenu:after {
+        content: "";
+        width: $nav_width / 1.5;
+        height: 4px;
+        position: absolute;
+        top: 10px;
+        background: $color_white;
+      }
+
+      .headerList__nav {
+        display: none;
+      }
+      .headerItem__logo {
+        width: 80%;
+      }
+
+      .headerList {
+        .mobileHidden {
+          display: none;
+        }
+        li {
+          .bagIcon {
+            display: block;
+          }
+        }
+      }
+    }
+
+    $nav_width: 20px;
+    $nav_height: 1.7px;
+    @include _600 {
+      .headerMenu {
+        margin-top: 10%;
+        width: $nav_width;
+        height: $nav_height;
+      }
+      .headerMenu:before {
+        width: $nav_width;
+        height: $nav_height;
+        top: -5px;
+      }
+      .headerMenu:after {
+        width: $nav_width / 1.5;
+        height: $nav_height;
+        top: 5px;
+      }
+
+      .headerIcon{
+        width: 70%;
       }
     }
   }
-
 }

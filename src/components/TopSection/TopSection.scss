@@ -1,6 +1,7 @@
 @import "src/styles/styles";
 
 .top-section {
+  background-image: url('../../images/Top-background.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
   min-height: 100vh;
@@ -9,12 +10,51 @@
   padding-bottom: 120px;
   order: 1;
 
+
   .top-section__container{
     margin-top: 32%;
     font-family: $main_font-family;
     color: $color_white;
+    .top-section__title-separator{
+      display: none;
+    }
     .top-section__text{
       margin: 2% 0;
     }
+
+
+    @include _1240{
+      margin-top: 20%;
+    }
   }
+
+  @include _600{
+    font-family: $main_font-family;
+    background-size: 100% auto;
+    background-image: url('../../images/Top-background600.jpg');
+    .top-section__container{
+      .container{
+        padding: 8% 0;
+      }
+      text-align: center;
+      margin-top: 95%;
+      background: $color_white;
+      color: $color_black;
+      h1{
+        font-size: 32px;
+        .top-section__title-separator{
+          display: block;
+        }
+      }
+
+      .top-section__text{
+        margin: 8% 0;
+        font-size: 12px;
+        .top-section__separator{
+          display: none;
+        }
+      }
+    }
+  }
+
 }

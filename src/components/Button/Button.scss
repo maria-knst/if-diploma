@@ -6,4 +6,10 @@
   color: $color_white;
   border: 2px solid $color_white;
   background: none;
+
+
+  @include _1240{
+    width: 200px;
+    height: 42px;
+  }
 }
