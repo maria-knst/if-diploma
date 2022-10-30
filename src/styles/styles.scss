@@ -6,6 +6,8 @@ $color_pink-grey: #EDE7F0;
 
 $main_font-family: 'Roboto', sans-serif;
 
+$footerElementsBorder:  2px dashed $color_main-grey;
+
 
 @mixin _1240 {
   @media screen and (max-width: 1240px) {
@@ -22,7 +24,7 @@ $main_font-family: 'Roboto', sans-serif;
 
 .container{
   width: 90%;
-  margin: 180px auto;
+  margin: 120px auto;
   @include _600{
     margin: 40px auto;
   }

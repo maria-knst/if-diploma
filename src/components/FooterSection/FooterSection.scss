@@ -1,0 +1,16 @@
+@import "src/styles/styles";
+
+.footer__container{
+  display: flex;
+  justify-content: space-between;
+
+  @include _1240{
+    flex-direction: column;
+  }
+}
+
+@include _1240{
+  .footer__container:first-child{
+    border-top: $footerElementsBorder;
+  }
+}
