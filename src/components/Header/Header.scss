@@ -29,6 +29,9 @@
           display: none;
         }
       }
+      li:hover{
+        opacity: 0.6;
+      }
     }
 
     $nav_width: 40px;

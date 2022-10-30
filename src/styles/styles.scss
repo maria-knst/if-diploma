@@ -1,13 +1,10 @@
 $color_white: #FFFFFF;
 $color_black: #000F08;
+$color_main-grey: #E5E5E5;
+$color_pink-grey: #EDE7F0;
 
 
 $main_font-family: 'Roboto', sans-serif;
-
-.container{
-  width: 90%;
-  margin: 0 auto;
-}
 
 
 @mixin _1240 {
@@ -19,5 +16,14 @@ $main_font-family: 'Roboto', sans-serif;
 @mixin _600 {
   @media screen and (max-width: 600px) {
     @content;
+  }
+}
+
+
+.container{
+  width: 90%;
+  margin: 180px auto;
+  @include _600{
+    margin: 40px auto;
   }
 }

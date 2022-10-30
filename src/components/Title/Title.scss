@@ -1,0 +1,42 @@
+@import '../../styles/styles.scss';
+
+.title {
+  font-weight: 200;
+  font-family: $main_font-family;
+  margin: 0 auto;
+  text-align: center;
+
+  .title-text {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+    position: relative;
+
+    @include _600{
+      font-size: 32px;
+    }
+  }
+
+  .title-text:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-bottom: 4px solid $color_main-grey;
+    transition: width 0.5s;
+  }
+
+  .title-text:hover::after {
+    width: 35%;
+  }
+
+}
+
+.title:hover {
+  opacity: 0.8;
+}
