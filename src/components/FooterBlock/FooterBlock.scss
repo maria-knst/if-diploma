@@ -28,7 +28,7 @@
 
   @include _1240 {
     border-bottom: $footerElementsBorder;
-    .footerTitle{
+    .footerTitle {
       display: flex;
       justify-content: left;
       align-items: center;
@@ -50,11 +50,11 @@
         transition: all 0.3s ease-in-out;
         background: $color_black;
       }
-      .footerPlus:after:checked{
+      .footerPlus:after:checked {
         transform: rotate(0deg);
       }
 
-      .footerPlus_active{
+      .footerPlus_active {
         display: block;
         content: "";
         width: 14px;
@@ -63,7 +63,7 @@
         background: $color_black;
         margin: auto 8px;
       }
-      .footerPlus_active:after{
+      .footerPlus_active:after {
         content: "";
         width: 14px;
         height: 2px;
@@ -76,26 +76,26 @@
 
     .footerList {
       display: none;
-      a{
-        img{
+      a {
+        img {
           width: 4%;
         }
       }
     }
 
-    .footerList_active{
+    .footerList_active {
       transition: all 0.5s ease-in-out;
       display: block;
     }
   }
 
-  @include _600{
-    .footerTitle{
+  @include _600 {
+    .footerTitle {
       font-size: 16px;
     }
 
-    .footerList{
-      a{
+    .footerList {
+      a {
         font-size: 16px;
       }
     }

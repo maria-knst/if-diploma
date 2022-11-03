@@ -1,10 +1,10 @@
 @import "src/styles/styles";
 
-.categories-container{
+.categories-container {
   display: grid;
   grid-gap: 2%;
   grid-auto-flow: column;
-  .categories-container__element{
+  .categories-container__element {
     display: flex;
     justify-content: center;
     background: $color_pink-grey;
@@ -15,30 +15,30 @@
     font-family: $main_font-family;
     align-items: center;
 
-    .categories-element__icon{
+    .categories-element__icon {
       width: 20%;
       height: 50px;
       margin-right: 8%;
     }
   }
-  .categories-container__element:hover{
+  .categories-container__element:hover {
     opacity: 0.8;
   }
 
-  @include _1240{
+  @include _1240 {
     grid-template: repeat(2, 1fr) / repeat(3, 1fr);
     margin: 40px auto;
-    .categories-container__element{
+    .categories-container__element {
       margin: 20px auto;
     }
   }
 
-  @include _600{
+  @include _600 {
     grid-template: repeat(3, 1fr) / repeat(2, 1fr);
-    .categories-container__element{
+    .categories-container__element {
       font-size: 20px;
       justify-content: space-evenly;
-      .categories-element__icon{
+      .categories-element__icon {
         width: 20%;
         margin: 0;
       }

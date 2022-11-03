@@ -1,40 +1,39 @@
 @import "src/styles/styles";
 
 .top-section {
-  background-image: url('../../images/Top-background.jpg');
+  background-image: url("../../images/Top-background.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
   min-height: 100vh;
   font-family: $main_font-family;
   color: $color_white;
   order: 1;
-  .container{
+  .container {
     padding-bottom: 120px;
   }
 
-  .top-section__container{
+  .top-section__container {
     margin-top: 32%;
     font-family: $main_font-family;
     color: $color_white;
-    .top-section__title-separator{
+    .top-section__title-separator {
       display: none;
     }
-    .top-section__text{
+    .top-section__text {
       margin: 2% 0;
     }
 
-
-    @include _1240{
+    @include _1240 {
       margin-top: 20%;
     }
   }
 
-  @include _600{
+  @include _600 {
     min-height: auto;
     background-size: 100% auto;
-    background-image: url('../../images/Top-background600.jpg');
-    .top-section__container{
-      .container{
+    background-image: url("../../images/Top-background600.jpg");
+    .top-section__container {
+      .container {
         margin: 80px auto 0;
         padding: 8% 0;
       }
@@ -42,21 +41,20 @@
       margin-top: 95%;
       background: $color_white;
       color: $color_black;
-      h1{
+      h1 {
         font-size: 32px;
-        .top-section__title-separator{
+        .top-section__title-separator {
           display: block;
         }
       }
 
-      .top-section__text{
+      .top-section__text {
         margin: 8% 0;
         font-size: 12px;
-        .top-section__separator{
+        .top-section__separator {
           display: none;
         }
       }
     }
   }
-
 }

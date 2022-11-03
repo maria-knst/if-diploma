@@ -1,4 +1,4 @@
-@import '../../styles/styles.scss';
+@import "../../styles/styles.scss";
 
 .title {
   font-weight: 200;
@@ -14,13 +14,13 @@
     text-align: center;
     position: relative;
 
-    @include _600{
+    @include _600 {
       font-size: 32px;
     }
   }
 
   .title-text:after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     width: 0;
@@ -34,7 +34,6 @@
   .title-text:hover::after {
     width: 35%;
   }
-
 }
 
 .title:hover {

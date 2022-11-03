@@ -1,13 +1,12 @@
-$color_white: #FFFFFF;
-$color_black: #000F08;
-$color_main-grey: #E5E5E5;
-$color_pink-grey: #EDE7F0;
+$color_white: #ffffff;
+$color_black: #000f08;
+$color_main-grey: #e5e5e5;
+$color_pink-grey: #ede7f0;
+$color_red: #d7302d;
 
+$main_font-family: "Roboto", sans-serif;
 
-$main_font-family: 'Roboto', sans-serif;
-
-$footerElementsBorder:  2px dashed $color_main-grey;
-
+$footerElementsBorder: 2px dashed $color_main-grey;
 
 @mixin _1240 {
   @media screen and (max-width: 1240px) {
@@ -21,11 +20,10 @@ $footerElementsBorder:  2px dashed $color_main-grey;
   }
 }
 
-
-.container{
+.container {
   width: 90%;
   margin: 120px auto;
-  @include _600{
+  @include _600 {
     margin: 40px auto;
   }
 }
