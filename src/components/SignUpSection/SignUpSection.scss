@@ -1,0 +1,78 @@
+@import "../../styles/styles.scss";
+
+.sign-up_block{
+  width: 35%;
+  margin: 120px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $main_font-family;
+  .sign-up__title{
+    font-weight: 400;
+    font-size: 24px;
+    margin: 12px auto;
+  }
+  .sign-up__span{
+    font-size: 16px;
+    margin-bottom: 36px;
+  }
+
+  .sign-up__input{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $color_pink-grey;
+    input{
+      font-size: 24px;
+      height: 40px;
+      border: none;
+      width: 70%;
+    }
+    button{
+      text-align: right;
+      font-size: 24px;
+      height: 40px;
+      width: 15%;
+      border: none;
+      background: none;
+    }
+    button:active{
+      font-weight: 600;
+    }
+  }
+
+  @include _1240{
+    $font_size: 18px;
+    margin: 40px auto;
+    .sign-up__title{
+      font-size: $font_size;
+    }
+    .sign-up__input{
+      input{
+        font-size: $font_size;
+      }
+      button{
+        font-size: $font_size;
+      }
+    }
+    width: 50%;
+  }
+  @include _600{
+    width: 90%;
+    $font_size: 16px;
+    .sign-up__title{
+      font-size: $font_size;
+    }
+    .sign-up__input{
+      input{
+        font-size: $font_size;
+      }
+      button{
+        font-size: $font_size;
+      }
+    }
+    .sign-up__span{
+      font-size: 12px;
+    }
+  }
+}

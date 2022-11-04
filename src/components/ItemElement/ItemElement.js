@@ -4,7 +4,6 @@ import "./ItemElement.scss";
 import like from "../../images/Like.svg";
 
 const PlaceElement = ({ item }) => {
-  console.log(item);
   return (
     <div className="item__element">
       <div className="image__container">

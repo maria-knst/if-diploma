@@ -112,6 +112,32 @@ export const CLOTHES_ITEMS = [
   },
 ];
 
+
+export const SHOP_ICONS = [
+  {
+    id: '93426d71-b49e-4154-9875-f00232987493',
+    imageURL: 'shopInstagram/mask.jpg',
+  },
+  {
+    id: '2e27eb54-1501-4c5e-bb19-d32f8154cfba',
+    imageURL: 'shopInstagram/mask(1).jpg',
+  },
+  {
+    id: '8376e91d-217b-4d08-8167-520fc9d05302',
+    imageURL: 'shopInstagram/mask(2).jpg',
+  },
+  {
+    id: '8a7416cb-dff3-49f9-b328-daa1881b596f',
+    imageURL: 'shopInstagram/mask(3).jpg',
+  },
+  {
+    id: '79f5c0b5-b673-49e4-9bec-9d0bd7f4432b',
+    imageURL: 'shopInstagram/mask(4).jpg',
+  },
+
+]
+
+
 const madeQueueFrom = (array, start, end) => {
   return array.slice(start, end);
 };

@@ -7,7 +7,7 @@ import { CLOTHES_ITEMS } from "../../utils/utils";
 
 const SalesItemsSection = () => {
   return (
-    <div>
+    <div className='sales-section'>
       <div className="container">
         <Title>
           #MODNIKKY<b>_Sale</b>
