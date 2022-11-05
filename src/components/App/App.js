@@ -5,18 +5,38 @@ import FooterSection from "../FooterSection/FooterSection";
 import SalesItemsSection from "../SalesItemsSection/SalesItemsSection";
 import SignUpSection from "../SignUpSection/SignUpSection";
 import ShopInstagramSection from "../ShopInstagramSection/ShopInstagramSection";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useState } from "react";
+import LogInSection from "../LogInSection/LogInSection";
 
 function App() {
-  return (
-    <div className="App">
-      <TopSection />
-      <CategoriesSection />
-      <SalesItemsSection />
-      <ShopInstagramSection />
-      <SignUpSection />
+  const [isAuthorize, setAuthorize] = useState(false);
 
-      <FooterSection />
-    </div>
+  return (
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="App">
+              {isAuthorize ? (
+                <>
+                  {" "}
+                  <TopSection />
+                  <CategoriesSection />
+                  <SalesItemsSection />
+                  <ShopInstagramSection />
+                  <SignUpSection />
+                  <FooterSection />
+                </>
+              ) : (
+                <LogInSection setAuthorize={setAuthorize}/>
+              )}
+            </div>
+          }
+        ></Route>
+      </Routes>
+    </Router>
   );
 }
 

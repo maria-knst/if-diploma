@@ -1,0 +1,12 @@
+@import "../../styles/styles.scss";
+
+button{
+  margin: 30px auto;
+  width: 50%;
+  height: 50px;
+  color: $color_white;
+  font-family: $main_font-family;
+  font-weight: 400;
+  background: $color_black;
+  border: none;
+}
