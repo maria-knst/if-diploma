@@ -1,0 +1,52 @@
+@import "../../styles/styles.scss";
+
+.places__arrow {
+  display: block;
+  position: absolute;
+  top: 45%;
+  z-index: 10;
+  left: calc(100% - 25px);
+  transform: translate(0%, -50%);
+  max-width: 60px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: $color_white;
+  box-shadow: 1px 5px 5px $color_pink-grey;
+  transition: box-shadow 0.2s;
+
+  @include _600{
+    top: 40%;
+    width: 40px;
+    height: 40px;
+  }
+}
+.places__arrow:active {
+  box-shadow: 1px 1px 1px $color_pink-grey;
+}
+
+.places__arrow img {
+  width: 40%;
+  height: 40%;
+}
+
+#places__arrow-prev {
+  position: absolute;
+  top: 45%;
+  z-index: 10;
+  left: calc(-25px);
+  img {
+    transform: rotate(180deg);
+  }
+
+  @include _600{
+    width: 40px;
+    height: 40px;
+    top: 40%;
+  }
+}
+
+.places__arrow_hidden {
+  display: none;
+}

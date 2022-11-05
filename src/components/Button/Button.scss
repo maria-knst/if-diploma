@@ -1,0 +1,19 @@
+@import "src/styles/styles";
+
+.myButton {
+  width: 240px;
+  height: 52px;
+  color: $color_white;
+  border: 2px solid $color_white;
+  background: none;
+
+  @include _1240 {
+    width: 200px;
+    height: 42px;
+  }
+
+  @include _600{
+    color: $color_black;
+    border: 1px solid $color_black;
+  }
+}
