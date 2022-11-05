@@ -2,10 +2,10 @@ import './BlackButton.scss'
 
 import React from 'react';
 
-const BlackButton = ({ children }) => {
+const BlackButton = ({ title, onClick }) => {
     return (
-        <button>
-            {children}
+        <button onClick={onClick}>
+            {title}
         </button>
     );
 };

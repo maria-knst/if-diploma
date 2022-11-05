@@ -1,10 +1,14 @@
 import "./LogInSection.scss";
 
 import React from "react";
-import Button from "../Button/Button";
 import BlackButton from "../BlackButton/BlackButton";
 
 const LogInSection = ({ setAuthorize }) => {
+
+  const handleClick = () => {
+    setAuthorize(true);
+  }
+
   return (
     <div className="login_section">
       <div className="login_container">
@@ -24,7 +28,7 @@ const LogInSection = ({ setAuthorize }) => {
             Exclusive early access to Sale, new arrivals and promotions. No nasties.</span>
           </label>
             <p>By signing up you agree to Terms of Service and Privacy Policy</p>
-            <BlackButton>SIGN UP</BlackButton>
+            <BlackButton title='SIGN UP' onClick={handleClick}/>
         </form>
         <a href="#">I HAVE AN ACCOUNT</a>
       </div>
