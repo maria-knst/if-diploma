@@ -1,6 +1,6 @@
 import "./ShopInstagramSection.scss";
 import arrow from "../../images/Arrow.svg";
-import { SHOP_ICONS } from "../../utils/utils";
+import { SHOP_ICONS } from "../../utils/constants";
 
 import React from "react";
 

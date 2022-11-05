@@ -1,5 +1,5 @@
 import "./CategoriesContainer.scss";
-import { CATEGORIES } from "../../utils/utils";
+import { CATEGORIES } from "../../utils/constants";
 
 import React from "react";
 

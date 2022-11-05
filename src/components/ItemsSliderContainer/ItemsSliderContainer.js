@@ -1,11 +1,10 @@
 import "./ItemsSliderContainer.scss";
 import Arrow from "../Arrow/Arrow";
 import {
-  VISIBLE_DIV_SIZE,
   madeQueueFrom,
   increment,
   decrement,
-} from "../../utils/utils";
+} from "../../utils/functions";
 import { useState } from "react";
 import ItemElement from "../ItemElement/ItemElement";
 
@@ -14,18 +13,22 @@ let sliderQueue = [];
 const ItemsSliderContainer = ({ elements }) => {
   const div_size = window.screen.width < 600 ? 2 : 4;
 
-  const [start, setStart] = useState(0);
-  const [end, setEnd] = useState(div_size);
+  const [sliderSize, setSliderSize] = useState({
+    start: 0,
+    end: div_size,
+  })
   const [arrowPrev, setArrowPrev] = useState(false);
   const [arrowNext, setArrowNext] = useState(true);
 
   const clickPrev = (event) => {
     setArrowNext(true);
     event.preventDefault();
-    const decr = decrement(start);
+    const decr = decrement(sliderSize.start);
     if (decr !== false) {
-      setStart(decr);
-      setEnd(start + div_size - 1);
+      setSliderSize({
+        end: sliderSize.start + div_size - 1,
+        start: decr,
+      })
     } else {
       setArrowPrev(false);
     }
@@ -34,16 +37,18 @@ const ItemsSliderContainer = ({ elements }) => {
   const clickNext = (event) => {
     setArrowPrev(true);
     event.preventDefault();
-    const incr = increment(end, elements);
+    const incr = increment(sliderSize.end, elements);
     if (incr !== false) {
-      setEnd(incr);
-      setStart(end - div_size + 1);
+      setSliderSize({
+        end: incr,
+        start: sliderSize.end - div_size + 1,
+      })
     } else {
       setArrowNext(false);
     }
   };
 
-  sliderQueue = madeQueueFrom(elements, start, end);
+  sliderQueue = madeQueueFrom(elements, sliderSize.start, sliderSize.end);
 
   return (
     <div className="places__flex-container col-12">

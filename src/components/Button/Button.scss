@@ -11,4 +11,9 @@
     width: 200px;
     height: 42px;
   }
+
+  @include _600{
+    color: $color_black;
+    border: 1px solid $color_black;
+  }
 }

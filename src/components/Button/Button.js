@@ -2,16 +2,11 @@ import React from "react";
 
 import "./Button.scss";
 
-const Button = ({ text, color }) => {
-  const borderWidth = window.screen.width < 600 ? 1 : 2;
+const Button = ({ text }) => {
 
-  const divStyle = {
-    color: `${color}`,
-    border: `${borderWidth}px solid ${color}`,
-  };
 
   return (
-    <button className="myButton" style={divStyle}>
+    <button className="myButton">
       {text}
     </button>
   );

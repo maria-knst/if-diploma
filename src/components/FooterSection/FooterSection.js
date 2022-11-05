@@ -2,7 +2,7 @@ import "./FooterSection.scss";
 
 import React from "react";
 import FooterBlock from "../FooterBlock/FooterBlock";
-import { FOOTER_SERVICE, FOOTER_INFO } from "../../utils/utils";
+import { FOOTER_SERVICE, FOOTER_INFO } from "../../utils/constants";
 
 import facebookLogo from "../../images/facebok-logo.svg";
 import instagramLogo from "../../images/instagram-logo.svg";

@@ -3,7 +3,7 @@ import "./SalesItemsSection.scss";
 import React from "react";
 import Title from "../Title/Title";
 import ItemsSliderContainer from "../ItemsSliderContainer/ItemsSliderContainer";
-import { CLOTHES_ITEMS } from "../../utils/utils";
+import { CLOTHES_ITEMS } from "../../utils/constants";
 
 const SalesItemsSection = () => {
   return (
