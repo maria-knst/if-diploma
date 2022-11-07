@@ -1,25 +1,25 @@
 @import "../../styles/styles.scss";
 
-@mixin ref_mixin{
+@mixin ref_mixin {
   font-family: $main_font-family;
   color: $color_black;
   display: flex;
   text-decoration: none;
 }
 
-.shop_titles{
+.shop_titles {
   display: flex;
   gap: 4%;
   margin: 32px 0;
-  .shop_ref{
+  .shop_ref {
     @include ref_mixin;
-    .shop_ref-icon{
+    .shop_ref-icon {
       margin-left: 15%;
     }
   }
 }
 
-.shop-grid__container{
+.shop-grid__container {
   display: grid;
   grid-template-areas:
     "A A A A   B B   D D"
@@ -27,39 +27,39 @@
     "A A A A   C C   F F"
     "A A A A   C C   F F";
 
-  .shop-grid__container_elem{
-    img{
+  .shop-grid__container_elem {
+    img {
       object-fit: cover;
       width: 100%;
       height: 100%;
     }
   }
-  .grid_elem0{
+  .grid_elem0 {
     grid-area: A;
   }
-  .grid_elem1{
+  .grid_elem1 {
     grid-area: B;
   }
-  .grid_elem2{
+  .grid_elem2 {
     grid-area: C;
   }
-  .grid_elem3{
+  .grid_elem3 {
     grid-area: D;
   }
-  .grid_elem4{
+  .grid_elem4 {
     grid-area: F;
   }
 }
 
-.shop_last-ref{
+.shop_last-ref {
   @include ref_mixin;
   margin: 32px 0;
 }
 
-@include _600{
-  .container{
+@include _600 {
+  .container {
     width: 98%;
-    .shop-grid__container{
+    .shop-grid__container {
       align-items: center;
       grid-template-areas:
         "A A A A"
@@ -69,6 +69,4 @@
         "F F F F";
     }
   }
-
 }
-

@@ -8,6 +8,7 @@ import ShopInstagramSection from "../ShopInstagramSection/ShopInstagramSection";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import LogInSection from "../LogInSection/LogInSection";
+import ItemPage from "../ItemPage/ItemPage";
 
 function App() {
   const [isAuthorize, setAuthorize] = useState(false);
@@ -19,22 +20,23 @@ function App() {
           path="/"
           element={
             <div className="App">
-              {isAuthorize ? (
-                <>
-                  {" "}
-                  <TopSection />
-                  <CategoriesSection />
-                  <SalesItemsSection />
-                  <ShopInstagramSection />
-                  <SignUpSection />
-                  <FooterSection />
-                </>
-              ) : (
-                <LogInSection setAuthorize={setAuthorize}/>
-              )}
+              <TopSection />
+              <CategoriesSection />
+              <SalesItemsSection />
+              <ShopInstagramSection />
+              {!isAuthorize && <SignUpSection />}
+              <FooterSection />
             </div>
           }
-        ></Route>
+        />
+        <Route
+          path="/authorization"
+          element={<LogInSection setAuthorize={setAuthorize} />}
+        />
+        <Route
+          path="/catalog/:itemId"
+          element={<ItemPage isAuthorize={isAuthorize} />}
+        />
       </Routes>
     </Router>
   );

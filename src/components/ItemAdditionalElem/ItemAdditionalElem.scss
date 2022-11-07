@@ -1,0 +1,64 @@
+@import "../../styles/styles.scss";
+
+.item_additional {
+  width: 85%;
+  margin: 12px 0;
+  .addit-info__name {
+    display: flex;
+    margin: 32px 0;
+
+    .addit-info__elem {
+      display: block;
+      content: "";
+      width: 14px;
+      height: 2px;
+      position: relative;
+      background: $color_black;
+      margin: auto 8px;
+    }
+    .addit-info__elem:after {
+      content: "";
+      width: 14px;
+      height: 2px;
+      position: absolute;
+      transform: rotate(90deg);
+      transition: all 0.3s ease-in-out;
+      background: $color_black;
+    }
+    .addit-info__elem:after:checked {
+      transform: rotate(0deg);
+    }
+
+    .addit-info__elem_active {
+      display: block;
+      content: "";
+      width: 14px;
+      height: 2px;
+      position: relative;
+      background: $color_black;
+      margin: auto 8px;
+    }
+    .addit-info__elem_active:after {
+      content: "";
+      width: 14px;
+      height: 2px;
+      position: absolute;
+      background: $color_black;
+      transform: rotate(360deg);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+.addit-info {
+  display: none;
+}
+
+.addit-info_active {
+  margin: 0 28px;
+  width: 90%;
+  font-size: 16px;
+  line-height: 32px;
+  color: $color_initial-grey;
+  transition: all 0.5s ease-in-out;
+  display: block;
+}

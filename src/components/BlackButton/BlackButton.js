@@ -1,13 +1,13 @@
-import './BlackButton.scss'
+import "./BlackButton.scss";
 
-import React from 'react';
+import React from "react";
 
-const BlackButton = ({ title, onClick }) => {
-    return (
-        <button onClick={onClick}>
-            {title}
-        </button>
-    );
+const BlackButton = ({ children, onClick, classNames }) => {
+  return (
+    <button className={classNames} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 export default BlackButton;
