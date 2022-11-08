@@ -36,11 +36,6 @@ const ItemPage = ({ isAuthorize }) => {
   const { itemId } = useParams();
   const [item, setItem] = useState(initialItem);
   const [liked, setLiked] = useState(false);
-  const [additInfo, setAdditInfo] = useState({
-    first: false,
-    second: false,
-    third: false,
-  });
 
   const handleLikeClick = (e) => {
     e.preventDefault();
@@ -63,7 +58,6 @@ const ItemPage = ({ isAuthorize }) => {
     getElementByID(itemId);
   }, []);
 
-  console.log(itemId);
   return (
     <>
       <Header isDark={true} />
@@ -71,7 +65,11 @@ const ItemPage = ({ isAuthorize }) => {
         <div className="item__container">
           <div className="item_icons">
             <img src={item.images[0]} alt="icon" />
-            <img src={item.images[1]} alt="icon" />
+            <img
+              className="item_icons-second"
+              src={item.images[1]}
+              alt="icon"
+            />
           </div>
           <div className="item_description">
             <h4 className="item__name">{item.name}</h4>
@@ -107,7 +105,7 @@ const ItemPage = ({ isAuthorize }) => {
                       />
                       <span>{sizeElem}</span>
                     </label>
-                  )
+                  ),
                 )}
               </div>
             </div>
