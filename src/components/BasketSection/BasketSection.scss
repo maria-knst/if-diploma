@@ -1,0 +1,204 @@
+@import "../../styles/styles";
+
+$border_bottom: 1px solid $color_main-grey;
+
+.basket_container{
+  width: 40%;
+  margin: 12px auto;
+
+  .basket__title{
+    display: flex;
+    gap: 4%;
+    border-bottom: $border_bottom;
+    align-items: center;
+    font-family: $main_font-family;
+    h6{
+      font-size: 32px;
+      font-weight: 400;
+      margin: 12px 0;
+    }
+    p{
+      color: $color_initial-grey;
+    }
+  }
+
+  .basket_element{
+    padding: 48px 0;
+    border-bottom: $border_bottom;
+
+    .basket_element-info{
+      display: flex;
+
+      .basket-item_icon{
+        width: 35%;
+        img{
+          width: 100%;
+        }
+      }
+      .basket-item_description{
+        width: 65%;
+        padding: 0 32px;
+        font-family: $main_font-family;
+        .basket-item_description-name{
+          font-size: 28px;
+          margin: 12px 0;
+        }
+        .basket-item_description-price, .basket-item_description-parameters{
+          font-size: 20px;
+        }
+        .basket-item_description-price{
+          margin: 24px 0;
+        }
+
+        .basket-item_description-parameters{
+          select{
+            font-family: $main_font-family;
+            font-size: 20px;
+            border: none;
+          }
+          select:focus{
+            border-radius: 0;
+          }
+          .color-parameter, .size-parameter, .quantity-parameter{
+            margin: 12px 0;
+          }
+        }
+      }
+    }
+    .basket-elem__remove{
+      margin: 24px 0;
+      display: flex;
+      justify-content: right;
+      align-items: center;
+      font-family: $main_font-family;
+      .basket-elem__remove-block{
+        margin: 0 8px;
+        content: "";
+        width: 24px;
+        height: 2px;
+        background: $color_black;
+        position: relative;
+        transform: rotate(45deg);
+      }
+      .basket-elem__remove-block:after{
+        content: "";
+        width: 24px;
+        height: 2px;
+        position: absolute;
+        top: 0;
+        transform: rotate(-90deg);
+        background: $color_black;
+      }
+    }
+  }
+
+  .basket_payment{
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $main_font-family;
+    h3{
+      margin: 32px 0;
+      font-size: 28px;
+      font-weight: 400;
+      text-align: center;
+    }
+    button{
+      width: 80%;
+      margin: 0 auto;
+    }
+    .type_of_payment{
+      width: 80%;
+      margin: 24px 0;
+      display: flex;
+      justify-content: center;
+      gap: 4%;
+    }
+  }
+
+  @include _1240{
+    width: 60%;
+    .basket_payment{
+      button{
+        font-size: 18px;
+      }
+    }
+  }
+
+  @include _600{
+    width: 95%;
+    .basket__title{
+      h6{
+        font-size: 24px;
+      }
+      p{
+        font-size: 18px;
+      }
+    }
+
+    .basket_element{
+      .basket_element-info{
+        .basket-item_description{
+          padding: 0 20px;
+          .basket-item_description-name{
+            font-size: 20px;
+          }
+          .basket-item_description-price, .basket-item_description-parameters{
+            font-size: 16px;
+          }
+          .basket-item_description-price{
+            margin: 12px 0;
+          }
+
+          .basket-item_description-parameters{
+            select{
+              font-size: 16px;
+            }
+            select:focus{
+              border-radius: 0;
+            }
+            .color-parameter, .size-parameter, .quantity-parameter{
+              margin: 8px 0;
+            }
+          }
+        }
+      }
+
+      .basket-elem__remove{
+        margin: 12px 0;
+        font-size: 18px;
+        .basket-elem__remove-block{
+          margin: 0 8px;
+          width: 18px;
+          height: 2px;
+        }
+        .basket-elem__remove-block:after{
+          width: 18px;
+          height: 2px;
+        }
+      }
+
+    }
+
+    .basket_payment{
+      width: 60%;
+      h3{
+        margin: 24px 0;
+        font-size: 20px;
+      }
+      button{
+        font-size: 12px;
+        height: 40px;
+      }
+      .type_of_payment{
+        width: 100%;
+        margin: 24px 0;
+        img{
+          height: 35px;
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,6 @@
+@use "sass:math";
 @import "src/styles/styles";
+
 
 .header {
   padding: 1% 0;
@@ -6,13 +8,14 @@
   justify-content: space-between;
   align-items: center;
   gap: 4%;
+  position: relative;
 
   $width: 100%;
 
   .headerItem {
     font-family: $main_font-family;
     color: $color_white;
-    width: $width / 3;
+    width: math.div($width, 3);
     .headerMenu {
       display: none;
     }
@@ -22,20 +25,55 @@
       justify-content: space-around;
       list-style: none;
       align-items: center;
+      .header-link,
       li {
+        text-decoration: none;
+        color: $color_white;
         display: flex;
         align-items: center;
         .bagIcon {
           display: none;
+          fill: $color_white;
+        }
+        .headerIcon-search {
+          fill: $color_white;
+          width: 25px;
+          height: 25px;
         }
       }
+      .header-link_dark,
+      .li-dark {
+        color: $color-black;
+      }
+      .header-link:hover,
       li:hover {
         opacity: 0.6;
       }
     }
+    
+    .headerItem__logo {
+      max-width: 70%;
+      max-height: 55px;
+      fill: $color_white;
+    }
+    .headerItem__logo-dark {
+      fill: $color_black;
+    }
+
+    .headerIcon-like {
+      width: 30px;
+      height: 30px;
+      fill: $color_white;
+    }
+
+    .headerIcon-dark {
+      fill: $color_black;
+    }
 
     $nav_width: 40px;
     @include _1240 {
+      width: 20%;
+
       .headerMenu {
         display: block;
         content: "";
@@ -55,27 +93,41 @@
       }
       .headerMenu:after {
         content: "";
-        width: $nav_width / 1.5;
+        width: math.div($nav_width, 1.5);
         height: 4px;
         position: absolute;
         top: 10px;
         background: $color_white;
       }
 
+      .headerMenu-dark {
+        background: $color_black;
+      }
+      .headerMenu-dark:before {
+        background: $color_black;
+      }
+      .headerMenu-dark:after {
+        background: $color_black;
+      }
+
       .headerList__nav {
         display: none;
       }
-      .headerItem__logo {
-        width: 80%;
+
+      .headerIcon-like {
+        width: 30px;
+        height: 30px;
       }
 
       .headerList {
         .mobileHidden {
           display: none;
         }
-        li {
+        .header-link {
           .bagIcon {
             display: block;
+            width: 28px;
+            height: 28px;
           }
         }
       }
@@ -84,6 +136,7 @@
     $nav_width: 20px;
     $nav_height: 1.7px;
     @include _600 {
+      width: 30%;
       .headerMenu {
         margin-top: 10%;
         width: $nav_width;
@@ -95,14 +148,109 @@
         top: -5px;
       }
       .headerMenu:after {
-        width: $nav_width / 1.5;
+        width: math.div($nav_width, 1.5);
         height: $nav_height;
         top: 5px;
       }
 
-      .headerIcon {
-        width: 70%;
+      .headerIcon-like {
+        width: 20px;
+        height: 20px;
       }
     }
   }
+
+  .headerItem-logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  @include _1240 {
+    .headerItem-logo {
+      width: 50%;
+    }
+  }
+
+  @include _600 {
+    .headerItem-logo {
+      width: 40%;
+      .headerItem__logo {
+        width: 100%;
+      }
+    }
+  }
+
+  .header_modal-search{
+    display: none;
+
+  }
+
+  .header_modal-search_active{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 200vh;
+    background: $color_main-grey;
+    align-items: center;
+    padding: 24% 0 4% 20%;
+    .header_modal-close-block{
+      content: "";
+      width: 62px;
+      height: 2px;
+      background: $color_white;
+      transform: rotate(45deg);
+      margin: 0 36px;
+    }
+    .header_modal-close-block:after{
+      position: absolute;
+      content: "";
+      width: 62px;
+      height: 2px;
+      background: $color_white;
+      transform: rotate(-90deg);
+    }
+    input{
+      height: 40px;
+      width: 85%;
+      background: none;
+      border: none;
+      color: $color_white;
+      font-family: $main_font-family;
+      font-size: 32px;
+      font-weight: 400;
+      border-bottom: 2px solid $color_white;
+    }
+
+
+    @include _1240{
+      .header_modal-close-block{
+        width: 40px;
+        margin: 0 24px;
+      }
+      .header_modal-close-block:after{
+        width: 40px;
+      }
+      input{
+        font-size: 20px;
+      }
+    }
+
+    @include _600{
+      width: 100%;
+      height: 100vh;
+      padding: 40% 1% 20%;
+      .header_modal-close-block{
+        width: 30px;
+        margin: 0 12px;
+      }
+      .header_modal-close-block:after{
+        width: 30px;
+      }
+      input{
+        font-size: 16px;
+      }
+    }
+  }
+
+
 }

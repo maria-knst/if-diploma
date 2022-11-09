@@ -1,10 +1,6 @@
 import "./ItemsSliderContainer.scss";
 import Arrow from "../Arrow/Arrow";
-import {
-  madeQueueFrom,
-  increment,
-  decrement,
-} from "../../utils/functions";
+import { madeQueueFrom, increment, decrement } from "../../utils/functions";
 import { useState } from "react";
 import ItemElement from "../ItemElement/ItemElement";
 
@@ -16,7 +12,7 @@ const ItemsSliderContainer = ({ elements }) => {
   const [sliderSize, setSliderSize] = useState({
     start: 0,
     end: div_size,
-  })
+  });
   const [arrowPrev, setArrowPrev] = useState(false);
   const [arrowNext, setArrowNext] = useState(true);
 
@@ -28,7 +24,7 @@ const ItemsSliderContainer = ({ elements }) => {
       setSliderSize({
         end: sliderSize.start + div_size - 1,
         start: decr,
-      })
+      });
     } else {
       setArrowPrev(false);
     }
@@ -42,7 +38,7 @@ const ItemsSliderContainer = ({ elements }) => {
       setSliderSize({
         end: incr,
         start: sliderSize.end - div_size + 1,
-      })
+      });
     } else {
       setArrowNext(false);
     }

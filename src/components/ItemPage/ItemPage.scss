@@ -1,0 +1,144 @@
+@import "../../styles/styles.scss";
+
+.item__container {
+  display: flex;
+  .item_icons {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    img {
+      max-height: 1600px;
+      width: 50%;
+    }
+  }
+  .item_description {
+    width: 30%;
+    padding: 2% 4%;
+    font-family: $main_font-family;
+    .item__name {
+      width: 100%;
+      font-weight: 400;
+      margin-bottom: 24px;
+      font-size: 24px;
+    }
+
+    .item_preorder {
+      margin: 24px 0 12px;
+      background: none;
+      color: $color_pink-grey;
+      height: 24px;
+    }
+
+    .item-color__container {
+      margin: 24px 0 36px;
+      h5 {
+        font-size: 18px;
+        font-weight: 400;
+        margin: 24px 0;
+      }
+      .item-color_block {
+        width: 42px;
+        height: 42px;
+        border: 1px solid $color_white;
+        box-shadow: 0 0 0 1px $color_black;
+      }
+    }
+
+    .item-size__container {
+      margin: 24px 0 48px;
+      h5 {
+        font-size: 18px;
+        font-weight: 400;
+        margin: 24px 0;
+      }
+
+      .item-size__checkbox-label {
+        position: relative;
+        margin: 0 8px;
+        input {
+          opacity: 0;
+        }
+        span {
+          transition: all 0.3s ease-in;
+          border-bottom: 2px solid $color_white;
+        }
+        input:checked ~ span {
+          border-bottom: 2px solid $color_black;
+        }
+      }
+    }
+    .item_buttons {
+      width: 100%;
+      margin: 12px 0;
+      padding: 0;
+      display: flex;
+      gap: 1%;
+      font-family: $main_font-family;
+      .item_add {
+        font-size: 24px;
+        width: 85%;
+        height: 58px;
+      }
+      .item_like {
+        height: 58px;
+        width: 15%;
+        .item_like-svg {
+          margin: auto;
+          width: 45%;
+          height: 35%;
+          fill: $color_white;
+        }
+        .item_like-svg_clicked {
+          fill: $color_red;
+        }
+      }
+      .item_like:active,
+      .item_add:active {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  @include _1240{
+    flex-direction: column;
+    .item_icons{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 24px 0;
+      img{
+        width: 70%;
+      }
+      .item_icons-second{
+        display: none;
+      }
+    }
+    .item_description{
+      width: 100%;
+      align-items: start;
+    }
+  }
+
+  @include _600{
+    .item_icons{
+      img{
+        width: 100%;
+      }
+    }
+    .item_description{
+      font-size: 16px;
+      .item-color__container, .item-size__container{
+        h5{
+          font-size: 18px;
+        }
+      }
+      .item_buttons{
+        width: 70%;
+        .item_add, .item_like{
+          font-size: 18px;
+          height: 42px;
+        }
+      }
+    }
+  }
+}

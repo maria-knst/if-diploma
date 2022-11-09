@@ -16,7 +16,7 @@
   box-shadow: 1px 5px 5px $color_pink-grey;
   transition: box-shadow 0.2s;
 
-  @include _600{
+  @include _600 {
     top: 40%;
     width: 40px;
     height: 40px;
@@ -40,7 +40,7 @@
     transform: rotate(180deg);
   }
 
-  @include _600{
+  @include _600 {
     width: 40px;
     height: 40px;
     top: 40%;

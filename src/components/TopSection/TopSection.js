@@ -6,7 +6,6 @@ import Header from "../Header/Header";
 import Button from "../Button/Button";
 
 const TopSection = () => {
-
   return (
     <header className="top-section">
       <Header />

@@ -1,4 +1,3 @@
-
 const madeQueueFrom = (array, start, end) => {
   return array.slice(start, end);
 };
@@ -17,4 +16,8 @@ const increment = (index, array) => {
   return false;
 };
 
-export { madeQueueFrom, increment, decrement };
+const getArrayOfSizes = (str) => {
+  return str.split(", ");
+};
+
+export { madeQueueFrom, increment, decrement, getArrayOfSizes };
