@@ -10,6 +10,7 @@ import BlackButton from "../BlackButton/BlackButton";
 
 import like from "../../images/Like.svg";
 import ItemAdditionalElem from "../ItemAdditionalElem/ItemAdditionalElem";
+import {getArrayOfSizes} from "../../utils/functions";
 
 const initialItem = {
   id: "5cd9a543-e4a3-4aa7-afa7-a78cf716ad9s",
@@ -50,9 +51,7 @@ const ItemPage = ({ isAuthorize }) => {
     setItem(result.find((item) => item.id === id));
   };
 
-  const getArrayOfSizes = (str) => {
-    return str.split(", ");
-  };
+
 
   useEffect(() => {
     getElementByID(itemId);

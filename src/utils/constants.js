@@ -76,39 +76,44 @@ export const FOOTER_INFO = [
 
 export const CLOTHES_ITEMS = [
   {
-    id: "aa560608-a879-48a7-80b6-deff2806b250",
-    name: "item1",
-    imageUrl: "clothesItems/insta1.jpg",
-    price: "13.00",
-    lowPrice: "5.90",
+    id: "5cd9a543-e4a3-4aa7-afa7-a78cf716ad9d",
+    type: "Dresses",
+    name: "SATIN EFFECT TUNIC DRESS",
+    price: {
+      currency: "USD",
+      value: "4990",
+    },
+    color: {
+      name: "Orange",
+      hex: "#ED7C00",
+    },
+    availableSizes: ["XS, S, M, L, XL, XXL"],
+    description:
+      "SLEEVELESS TUNIC DRESS WITH V-NECKLINE AND WIDE ARM HOLES. FRONT PLEATS. ASYMMETRIC HEM.",
+    images: [
+      "https://res.cloudinary.com/intellectfox/image/upload/v1619551443/Diploma%20Front-end/Online%20shop_Modmikky/Dresses/dress_1_1.jpg",
+      "https://res.cloudinary.com/intellectfox/image/upload/v1619551814/Diploma%20Front-end/Online%20shop_Modmikky/Dresses/dress_1_2.jpg",
+    ],
   },
   {
-    id: "a2bf824d-edd8-41f0-8b70-244334086ab4",
-    name: "item2",
-    imageUrl: "clothesItems/insta2.jpg",
-    price: "8.00",
-    lowPrice: "4.90",
-  },
-  {
-    id: "4024535d-a498-4274-b7cb-f01ada962971",
-    name: "item3",
-    imageUrl: "clothesItems/insta3.jpg",
-    price: "14.00",
-    lowPrice: "5.90",
-  },
-  {
-    id: "e51e71f6-6baf-4493-b3ae-25dc27cdc238",
-    name: "item4",
-    imageUrl: "clothesItems/insta4.jpg",
-    price: "9.00",
-    lowPrice: "5.90",
-  },
-  {
-    id: "87d2b966-2431-43f3-8c0d-2c8723474dfc",
-    name: "item5",
-    imageUrl: "clothesItems/insta1.jpg",
-    price: "13.00",
-    lowPrice: "5.90",
+    id: "bb5d77d1-7f4d-432c-a508-71dc8d7d3784",
+    type: "Dresses",
+    name: "PRINTED MINI DRESS",
+    price: {
+      currency: "USD",
+      value: "3990",
+    },
+    color: {
+      name: "Blue",
+      hex: "#0284CC",
+    },
+    availableSizes: ["XS, S, M, L, XL, XXL"],
+    description:
+      "V-NECK DRESS WITH THIN STRAPS. RUFFLED HEM. SIDE HIDDEN IN-SEAM ZIP CLOSURE.",
+    images: [
+      "https://res.cloudinary.com/intellectfox/image/upload/v1619552035/Diploma%20Front-end/Online%20shop_Modmikky/Dresses/dress_2_1.webp",
+      "https://res.cloudinary.com/intellectfox/image/upload/v1619552100/Diploma%20Front-end/Online%20shop_Modmikky/Dresses/dress_2_2.webp",
+    ],
   },
 ];
 

@@ -11,7 +11,7 @@ const Header = ({ isDark }) => {
   return (
     <div className="header">
       <nav className="headerItem">
-        <div className="headerMenu"></div>
+        <div className={`headerMenu ${isDark && 'headerMenu-dark'}`}></div>
         <ul className="headerList headerList__nav">
           <li className={`${isDark && "li-dark"}`}>NEW ARRIVALS</li>
           <li className={`${isDark && "li-dark"}`}>SHOP</li>
@@ -30,7 +30,9 @@ const Header = ({ isDark }) => {
       <div className={`headerItem`}>
         <ul className="headerList">
           <Link className={`header-link ${isDark && "header-link_dark"}`}>
-            <img className="headerIcon" src={searchIcon} alt="search" />
+            <svg className={`headerIcon headerIcon-search  ${isDark && 'headerIcon-dark'}`}>
+              <use href={`${searchIcon}#searchLogo`} />
+            </svg>
             <span className="mobileHidden">SEARCH</span>
           </Link>
           <Link
@@ -41,14 +43,16 @@ const Header = ({ isDark }) => {
           >
             <div className="header_sign-in">SIGN IN</div>
           </Link>
-          <Link className={`header-link ${isDark && "header-link_dark"}`}>
+          <Link to='/basket' className={`header-link ${isDark && "header-link_dark"}`}>
             <span className="bagText mobileHidden ">
               BAG (<span>2</span>)
             </span>
-            <img className="bagIcon headerIcon" src={shoppingBag} alt="bag" />
+            <svg className={`bagIcon headerIcon ${isDark && 'headerIcon-dark'}`}>
+              <use href={`${shoppingBag}#bagIcon`} />
+            </svg>
           </Link>
           <Link className={`header-link ${isDark && "header-link_dark"}`}>
-            <svg className="headerIcon headerIcon-like">
+            <svg className={`headerIcon headerIcon-like ${isDark && 'headerIcon-dark'}`}>
               <use href={`${like}#like_logo`} />
             </svg>
           </Link>

@@ -9,6 +9,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import LogInSection from "../LogInSection/LogInSection";
 import ItemPage from "../ItemPage/ItemPage";
+import BasketSection from "../BasketSection/BasketSection";
+import {CLOTHES_ITEMS} from "../../utils/constants";
 
 function App() {
   const [isAuthorize, setAuthorize] = useState(false);
@@ -37,6 +39,7 @@ function App() {
           path="/catalog/:itemId"
           element={<ItemPage isAuthorize={isAuthorize} />}
         />
+        <Route path='/basket' element={<BasketSection isAuthorize={isAuthorize} items={CLOTHES_ITEMS} />}/>
       </Routes>
     </Router>
   );

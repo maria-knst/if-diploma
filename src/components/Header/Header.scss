@@ -30,6 +30,15 @@
         align-items: center;
         .bagIcon {
           display: none;
+          fill: $color_white;
+        }
+        .headerIcon-search{
+          fill: $color_white;
+          width: 25px;
+          height: 25px;
+        }
+        .headerIcon-dark {
+          fill: $color_black;
         }
       }
       .header-link_dark,
@@ -56,14 +65,19 @@
     }
 
     .headerIcon-like {
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
       fill: $color_white;
+    }
+
+    .headerIcon-dark {
+      fill: $color_black;
     }
 
     $nav_width: 40px;
     @include _1240 {
       width: 20%;
+
 
       .headerMenu {
         display: block;
@@ -91,6 +105,16 @@
         background: $color_white;
       }
 
+      .headerMenu-dark{
+        background: $color_black;
+      }
+      .headerMenu-dark:before{
+        background: $color_black;
+      }
+      .headerMenu-dark:after{
+        background: $color_black;
+      }
+
       .headerList__nav {
         display: none;
       }
@@ -107,6 +131,8 @@
         .header-link {
           .bagIcon {
             display: block;
+            width: 28px;
+            height: 28px;
           }
         }
       }
