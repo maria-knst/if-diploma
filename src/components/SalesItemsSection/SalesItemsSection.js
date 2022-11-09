@@ -18,7 +18,6 @@ const SalesItemsSection = () => {
     getItems();
   }, []);
 
-  console.log(itemsArray);
 
   return (
     <div className="sales-section">

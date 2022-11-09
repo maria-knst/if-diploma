@@ -3,11 +3,28 @@ import logo from "../../images/brand-logo.svg";
 import searchIcon from "../../images/search-icon.svg";
 import shoppingBag from "../../images/shopping-cart-icon.svg";
 
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import like from "../../images/Like.svg";
 
 const Header = ({ isDark }) => {
+
+  const [searchValue, setSearchValue] = useState('ENTER SEARCH TERMS')
+  const [activeSearch, setActiveSearch] = useState(false)
+
+  const handleChange = (e) =>{
+    e.preventDefault()
+    setSearchValue(e.target.value)
+  }
+
+  const handleSearchOpenClick = () => {
+    setActiveSearch(true);
+  }
+
+  const handleSearchCloseClick = ()=>{
+    setActiveSearch(false);
+  }
+
   return (
     <div className="header">
       <nav className="headerItem">
@@ -29,7 +46,7 @@ const Header = ({ isDark }) => {
 
       <div className={`headerItem`}>
         <ul className="headerList">
-          <Link className={`header-link ${isDark && "header-link_dark"}`}>
+          <Link className={`header-link ${isDark && "header-link_dark"}`} onClick={handleSearchOpenClick}>
             <svg className={`headerIcon headerIcon-search  ${isDark && 'headerIcon-dark'}`}>
               <use href={`${searchIcon}#searchLogo`} />
             </svg>
@@ -57,6 +74,12 @@ const Header = ({ isDark }) => {
             </svg>
           </Link>
         </ul>
+
+      </div>
+
+      <div className={`${activeSearch ? 'header_modal-search_active' :  'header_modal-search'}`}>
+        <div className="header_modal-close-block" onClick={handleSearchCloseClick}></div>
+        <input type="text" placeholder='ENTER SEARCH TERMS' value={searchValue} onChange={handleChange} />
       </div>
     </div>
   );
