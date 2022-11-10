@@ -5,6 +5,7 @@ import like from "../../images/Like.svg";
 import { Link } from "react-router-dom";
 import {addToBasket} from "../../redux/ducks/basketAdditing/basket_actions";
 import {useDispatch} from "react-redux";
+import {addToFavourites} from "../../redux/ducks/favouritesAdditing/favourites_actions";
 
 const PlaceElement = ({ item }) => {
   const [liked, setLiked] = useState(false);
@@ -13,7 +14,8 @@ const PlaceElement = ({ item }) => {
   const handleLikeClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    setLiked(!liked);
+    dispatch(addToFavourites(item));
+    setLiked(true);
   };
 
   const handleAddClick = (e) => {

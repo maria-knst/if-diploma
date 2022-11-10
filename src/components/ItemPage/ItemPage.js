@@ -14,6 +14,7 @@ import { getArrayOfSizes } from "../../utils/functions";
 import { isAuthorizeSelector } from "../../redux/ducks/authorization/authoriz_selectors";
 import {useDispatch, useSelector} from "react-redux";
 import {addToBasket} from "../../redux/ducks/basketAdditing/basket_actions";
+import {addToFavourites} from "../../redux/ducks/favouritesAdditing/favourites_actions";
 
 const initialItem = {
   id: "5cd9a543-e4a3-4aa7-afa7-a78cf716ad9s",
@@ -48,6 +49,7 @@ const ItemPage = () => {
     e.preventDefault();
     e.stopPropagation();
     setLiked(!liked);
+    dispatch(addToFavourites(item))
   };
 
   const handleAddClick = (e) => {

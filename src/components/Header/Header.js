@@ -97,7 +97,7 @@ const Header = ({ isDark }) => {
               <use href={`${shoppingBag}#bagIcon`} />
             </svg>
           </Link>
-          <Link className={`header-link ${isDark && "header-link_dark"}`}>
+          <Link to='/favorites' className={`header-link ${isDark && "header-link_dark"}`}>
             <svg className={`headerIcon headerIcon-like ${isDark && 'headerIcon-dark'}`}>
               <use href={`${like}#like_logo`} />
             </svg>

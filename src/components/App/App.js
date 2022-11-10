@@ -16,10 +16,13 @@ import { searchingStringSelector } from "../../redux/ducks/searchingString/searc
 import { availableItemsSelector } from "../../redux/ducks/search/search_selectors";
 import {useSelector} from "react-redux";
 import FilteredItemsSection from "../FilteredItemsSection/FilteredItemsSection";
+import FavoritesSection from "../FavoritesSection/FavoritesSection";
+import {favouritesDataSelector} from "../../redux/ducks/favouritesAdditing/favourites_selectors";
 
 function App() {
   const isAuthorize = useSelector(isAuthorizeSelector)
   const basketItems = useSelector(basketDataSelector)
+  const favouritesItems = useSelector(favouritesDataSelector)
   const searchStr = useSelector(searchingStringSelector)
   const itemsArray = useSelector(availableItemsSelector)
 
@@ -37,7 +40,7 @@ function App() {
           element={
             <div className="App">
               <TopSection />
-              {!!searchStr.length && <FilteredItemsSection items={getFilteredItems()}/>}
+              {!!searchStr.length && <div className='container'><FilteredItemsSection items={getFilteredItems()}/></div>}
               <CategoriesSection />
               <SalesItemsSection />
               <ShopInstagramSection />
@@ -55,6 +58,7 @@ function App() {
           element={<ItemPage/>}
         />
         <Route path='/basket' element={<BasketSection isAuthorize={isAuthorize} items={basketItems} />}/>
+        <Route path='/favorites' element={<FavoritesSection items={favouritesItems}/>} />
       </Routes>
     </Router>
   );
