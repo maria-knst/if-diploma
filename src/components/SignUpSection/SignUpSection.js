@@ -1,9 +1,9 @@
 import "./SignUpSection.scss";
 
-import React, {useState} from "react";
+import React from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {emailPosted} from "../../redux/ducks/singUpForUpdates/updates_actions";
 
+import {emailPosted} from "../../redux/ducks/singUpForUpdates/updates_actions";
 import { messageSelector } from "../../redux/ducks/singUpForUpdates/updates_selectors";
 
 const SignUpSection = () => {

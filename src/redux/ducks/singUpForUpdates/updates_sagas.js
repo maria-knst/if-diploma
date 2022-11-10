@@ -14,9 +14,7 @@ export function* getUpdateSaga(action) {
         })
         const res = yield response.json()
 
-        console.log('->')
         yield put(emailSucceed(JSON.stringify(res)))
-        console.log('<-')
     } catch (e) {
         yield put(emailFailed(e.message))
     }
