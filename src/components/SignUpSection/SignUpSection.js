@@ -1,8 +1,17 @@
 import "./SignUpSection.scss";
 
 import React from "react";
+import {useNavigate} from "react-router";
 
 const SignUpSection = () => {
+
+  const navigate = useNavigate()
+
+  const handleJoinClick = (e) => {
+    e.preventDefault()
+    navigate('/authorization');
+  }
+
   return (
     <div className="sign-up__section">
       <div className="sign-up_block">
@@ -16,7 +25,7 @@ const SignUpSection = () => {
             type="email"
             placeholder="Your email address"
           />
-          <button>JOIN</button>
+          <button onClick={handleJoinClick}>JOIN</button>
         </div>
       </div>
     </div>

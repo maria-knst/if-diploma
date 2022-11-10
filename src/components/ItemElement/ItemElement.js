@@ -3,15 +3,25 @@ import "./ItemElement.scss";
 
 import like from "../../images/Like.svg";
 import { Link } from "react-router-dom";
+import {addToBasket} from "../../redux/ducks/basketAdditing/basket_actions";
+import {useDispatch} from "react-redux";
 
 const PlaceElement = ({ item }) => {
   const [liked, setLiked] = useState(false);
+  const dispatch = useDispatch();
 
   const handleLikeClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
     setLiked(!liked);
   };
+
+  const handleAddClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    e.target.innerText = 'ADDED';
+    dispatch(addToBasket(item));
+  }
 
   return (
     <Link to={`/catalog/${item.id}`} className="item__element">
@@ -24,7 +34,7 @@ const PlaceElement = ({ item }) => {
           <use href={`${like}#like_logo`} />
         </svg>
         <div className="item__add-layer">
-          <button>ADD TO BAG</button>
+          <button onClick={handleAddClick}>ADD TO BAG</button>
         </div>
         <div className="item_discount">
           -{(100 - (3000 * 100) / item.price.value).toFixed(0)}%

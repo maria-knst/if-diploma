@@ -10,10 +10,23 @@ import BlackButton from "../BlackButton/BlackButton";
 import maestro from '../../images/maestro-logo.svg'
 import visa from '../../images/visa-logo.svg'
 
-const BasketSection = ({ isAuthorize, items }) => {
+import { isAuthorizeSelector } from "../../redux/ducks/authorization/authoriz_selectors";
+import {useDispatch, useSelector} from "react-redux";
+import {removeFromBasket} from "../../redux/ducks/basketAdditing/basket_actions";
+import {Link} from "react-router-dom";
+
+const BasketSection = ({ items }) => {
+
+    const isAuthorize = useSelector(isAuthorizeSelector);
+    const dispatch = useDispatch()
 
     const getTotalPrice = () => {
         return items.reduce((acc, innerItem) => (acc + Number(innerItem.price.value)), 0);
+    }
+
+    const handleRemoveClick = (e, id) => {
+        e.preventDefault()
+        dispatch(removeFromBasket(id))
     }
 
   return (
@@ -30,9 +43,9 @@ const BasketSection = ({ isAuthorize, items }) => {
         {items.map((item) => (
           <div className="basket_element" key={item.id}>
             <div className="basket_element-info">
-              <div className="basket-item_icon">
+              <Link to={`/catalog/${item.id}`} className="basket-item_icon">
                 <img src={item.images[0]} alt="item icon" />
-              </div>
+              </Link>
               <div className="basket-item_description">
                 <div className="basket-item_description-name">{item.name}</div>
                 <div className="basket-item_description-price">
@@ -73,7 +86,7 @@ const BasketSection = ({ isAuthorize, items }) => {
               </div>
             </div>
 
-            <div className="basket-elem__remove">
+            <div className="basket-elem__remove" onClick={(ev) => handleRemoveClick(ev, item.id)}>
               <div className="basket-elem__remove-block"></div>
               <p>REMOVE</p>
             </div>

@@ -6,11 +6,21 @@ import shoppingBag from "../../images/shopping-cart-icon.svg";
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import like from "../../images/Like.svg";
+import { isAuthorizeSelector } from "../../redux/ducks/authorization/authoriz_selectors";
+import { basketDataLengthSelector } from "../../redux/ducks/basketAdditing/basket_selectors";
+import {useDispatch, useSelector} from "react-redux";
+import {setAuthorize} from "../../redux/ducks/authorization/authoriz_actions";
+import {useNavigate} from "react-router";
 
 const Header = ({ isDark }) => {
 
   const [searchValue, setSearchValue] = useState('ENTER SEARCH TERMS')
   const [activeSearch, setActiveSearch] = useState(false)
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isAuthorize = useSelector(isAuthorizeSelector);
+  const basketLength = useSelector(basketDataLengthSelector);
 
   const handleChange = (e) =>{
     e.preventDefault()
@@ -23,6 +33,15 @@ const Header = ({ isDark }) => {
 
   const handleSearchCloseClick = ()=>{
     setActiveSearch(false);
+  }
+
+  const handleAuthorizeClick = () => {
+    if(isAuthorize){
+      dispatch(setAuthorize(false));
+      navigate('/')
+    }else{
+      navigate('/authorization')
+    }
   }
 
   return (
@@ -52,17 +71,17 @@ const Header = ({ isDark }) => {
             </svg>
             <span className="mobileHidden">SEARCH</span>
           </Link>
-          <Link
-            to="/authorization"
+          <li
+              onClick={handleAuthorizeClick}
             className={`mobileHidden header-link ${
               isDark && "header-link_dark"
             }`}
           >
-            <div className="header_sign-in">SIGN IN</div>
-          </Link>
+            <div className="header_sign-in">SIGN <span>{isAuthorize ? 'OUT' : 'IN'}</span></div>
+          </li>
           <Link to='/basket' className={`header-link ${isDark && "header-link_dark"}`}>
             <span className="bagText mobileHidden ">
-              BAG (<span>2</span>)
+              BAG (<span>{basketLength}</span>)
             </span>
             <svg className={`bagIcon headerIcon ${isDark && 'headerIcon-dark'}`}>
               <use href={`${shoppingBag}#bagIcon`} />

@@ -6,14 +6,17 @@ import SalesItemsSection from "../SalesItemsSection/SalesItemsSection";
 import SignUpSection from "../SignUpSection/SignUpSection";
 import ShopInstagramSection from "../ShopInstagramSection/ShopInstagramSection";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useState } from "react";
 import LogInSection from "../LogInSection/LogInSection";
 import ItemPage from "../ItemPage/ItemPage";
 import BasketSection from "../BasketSection/BasketSection";
-import {CLOTHES_ITEMS} from "../../utils/constants";
+
+import { isAuthorizeSelector } from "../../redux/ducks/authorization/authoriz_selectors";
+import { basketDataSelector} from "../../redux/ducks/basketAdditing/basket_selectors";
+import {useSelector} from "react-redux";
 
 function App() {
-  const [isAuthorize, setAuthorize] = useState(false);
+  const isAuthorize = useSelector(isAuthorizeSelector)
+  const basketItems = useSelector(basketDataSelector)
 
   return (
     <Router>
@@ -33,13 +36,13 @@ function App() {
         />
         <Route
           path="/authorization"
-          element={<LogInSection setAuthorize={setAuthorize} />}
+          element={<LogInSection />}
         />
         <Route
           path="/catalog/:itemId"
-          element={<ItemPage isAuthorize={isAuthorize} />}
+          element={<ItemPage/>}
         />
-        <Route path='/basket' element={<BasketSection isAuthorize={isAuthorize} items={CLOTHES_ITEMS} />}/>
+        <Route path='/basket' element={<BasketSection isAuthorize={isAuthorize} items={basketItems} />}/>
       </Routes>
     </Router>
   );
