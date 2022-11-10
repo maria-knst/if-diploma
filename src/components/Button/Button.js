@@ -2,8 +2,8 @@ import React from "react";
 
 import "./Button.scss";
 
-const Button = ({ text }) => {
-  return <button className="myButton">{text}</button>;
+const Button = ({ text, isDark }) => {
+  return <button className={`myButton ${isDark && 'myButton-dark'}`}>{text}</button>;
 };
 
 export default Button;

@@ -10,7 +10,11 @@ import BlackButton from "../BlackButton/BlackButton";
 
 import like from "../../images/Like.svg";
 import ItemAdditionalElem from "../ItemAdditionalElem/ItemAdditionalElem";
-import {getArrayOfSizes} from "../../utils/functions";
+import { getArrayOfSizes } from "../../utils/functions";
+import { isAuthorizeSelector } from "../../redux/ducks/authorization/authoriz_selectors";
+import {useDispatch, useSelector} from "react-redux";
+import {addToBasket} from "../../redux/ducks/basketAdditing/basket_actions";
+import {addToFavourites} from "../../redux/ducks/favouritesAdditing/favourites_actions";
 
 const initialItem = {
   id: "5cd9a543-e4a3-4aa7-afa7-a78cf716ad9s",
@@ -33,25 +37,32 @@ const initialItem = {
   ],
 };
 
-const ItemPage = ({ isAuthorize }) => {
+const ItemPage = () => {
   const { itemId } = useParams();
   const [item, setItem] = useState(initialItem);
   const [liked, setLiked] = useState(false);
 
+  const isAuthorize = useSelector(isAuthorizeSelector);
+  const dispatch = useDispatch()
+
   const handleLikeClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-
     setLiked(!liked);
+    dispatch(addToFavourites(item))
   };
+
+  const handleAddClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dispatch(addToBasket(item));
+  }
 
   const getElementByID = async (id) => {
     const request = await fetch(BASE_PATH);
     const result = await request.json();
     setItem(result.find((item) => item.id === id));
   };
-
-
 
   useEffect(() => {
     getElementByID(itemId);
@@ -110,7 +121,7 @@ const ItemPage = ({ isAuthorize }) => {
             </div>
 
             <div className="item_buttons">
-              <BlackButton classNames="item_add">ADD TO BAG</BlackButton>
+              <BlackButton classNames="item_add" onClick={handleAddClick}>ADD TO BAG</BlackButton>
               <BlackButton classNames="item_like">
                 <svg
                   className={`item_like-svg ${

@@ -1,0 +1,44 @@
+@use "sass:math";
+@import "../../styles/styles.scss";
+
+.filtered-items_section{
+
+  .filtered-items_empty{
+    font-family: $main_font-family;
+    font-size: 32px;
+    color: $color_black;
+  }
+  .filtered-items_container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5%;
+    margin: 105px auto 0;
+    justify-content: center;
+    position: relative;
+    .item__element{
+      width: math.div(100%, 4.2);
+    }
+
+    @include _1240{
+      .item__element{
+        width: math.div(100%, 3.2);
+      }
+    }
+
+    @include _600{
+      .item__element{
+        width: math.div(100%, 2.2);
+      }
+    }
+  }
+
+  .button_container{
+    width: 100%;
+    margin: 24px 0;
+    display: flex;
+    button{
+      margin: 0 auto;
+    }
+
+  }
+}
