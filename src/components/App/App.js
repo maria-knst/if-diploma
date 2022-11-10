@@ -12,11 +12,22 @@ import BasketSection from "../BasketSection/BasketSection";
 
 import { isAuthorizeSelector } from "../../redux/ducks/authorization/authoriz_selectors";
 import { basketDataSelector} from "../../redux/ducks/basketAdditing/basket_selectors";
+import { searchingStringSelector } from "../../redux/ducks/searchingString/searchingString_selectors";
+import { availableItemsSelector } from "../../redux/ducks/search/search_selectors";
 import {useSelector} from "react-redux";
+import FilteredItemsSection from "../FilteredItemsSection/FilteredItemsSection";
 
 function App() {
   const isAuthorize = useSelector(isAuthorizeSelector)
   const basketItems = useSelector(basketDataSelector)
+  const searchStr = useSelector(searchingStringSelector)
+  const itemsArray = useSelector(availableItemsSelector)
+
+  const getFilteredItems = () => {
+    const str = searchStr.toLowerCase();
+    return itemsArray.filter((innerItem) => innerItem.name.toLowerCase().includes(str) ||  innerItem.type.toLowerCase().includes(str));
+  }
+
 
   return (
     <Router>
@@ -26,6 +37,7 @@ function App() {
           element={
             <div className="App">
               <TopSection />
+              {!!searchStr.length && <FilteredItemsSection items={getFilteredItems()}/>}
               <CategoriesSection />
               <SalesItemsSection />
               <ShopInstagramSection />

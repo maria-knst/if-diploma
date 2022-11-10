@@ -1,1 +1,2 @@
-export const availableItemsSelector = (state) => state.search.data
+export const availableItemsSelector = (state) => state.search.data;
+

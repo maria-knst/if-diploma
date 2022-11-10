@@ -3,6 +3,7 @@ import { initialState as initialSearchState } from './ducks/search/search_reduse
 import { initialState as initialBasketState } from "./ducks/basketAdditing/basket_redusers";
 import { initialState as initialUpdatesState } from "./ducks/singUpForUpdates/updates_redusers";
 import { initialState as initialProccedState } from "./ducks/proccedBasket/procced_redusers";
+import { initialState as initialSearchStrState } from "./ducks/searchingString/searchingString_redusers";
 
 const initialState = {
     authorization: initialAuthorizeState,
@@ -10,6 +11,7 @@ const initialState = {
     basket: initialBasketState,
     updates: initialUpdatesState,
     proccedBasket: initialProccedState,
+    searchStr: initialSearchStrState,
 }
 
 export default initialState

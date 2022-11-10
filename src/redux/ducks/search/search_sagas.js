@@ -4,19 +4,12 @@ import {
   searchDataSucceed,
   searchDataFailed,
 } from './search_actions'
+import {BASE_PATH} from "../../../utils/constants";
 
 
-export function* getSearchingSaga(action) {
+export function* getSearchingSaga() {
   try {
-    const path = `
-      ${action.payload.searchingString} 
-      ${action.payload.start}
-      ${action.payload.end}
-      ${action.payload.adults}
-      ${action.payload.childrenAge}
-      ${action.payload.rooms}
-    `;
-    const response = yield fetch(path)
+    const response = yield fetch(BASE_PATH)
     const data = yield response.json()
 
     yield put(searchDataSucceed(data))

@@ -9,19 +9,12 @@ export const initialState = {
   data: [],
   error: null,
   loading: false,
-  searchingString: '',
-  startDate: new Date(),
-  endDate: new Date(),
-  adults: 2,
-  childrenAge: [],
-  rooms: 1,
 }
 
 const handlers = {
-  [searchDataRequested]: (state, action) => ({
+  [searchDataRequested]: (state) => ({
     ...state,
     loading: true,
-    ...action.payload,
   }),
   [searchDataSucceed]: (state, action) => ({
     ...state,

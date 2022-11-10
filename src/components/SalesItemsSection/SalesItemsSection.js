@@ -1,21 +1,19 @@
 import "./SalesItemsSection.scss";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import Title from "../Title/Title";
 import ItemsSliderContainer from "../ItemsSliderContainer/ItemsSliderContainer";
-import { CLOTHES_ITEMS, BASE_PATH } from "../../utils/constants";
+import {useDispatch, useSelector} from "react-redux";
+import {availableItemsSelector} from "../../redux/ducks/search/search_selectors";
+import {searchDataRequested} from "../../redux/ducks/search/search_actions";
 
 const SalesItemsSection = () => {
-  const [itemsArray, setItemsArray] = useState([]);
+  const itemsArray = useSelector(availableItemsSelector);
+  const dispatch = useDispatch()
 
-  const getItems = async () => {
-    const res = await fetch(BASE_PATH);
-    const result = await res.json();
-    setItemsArray(result);
-  };
 
   useEffect(() => {
-    getItems();
+    dispatch(searchDataRequested())
   }, []);
 
 

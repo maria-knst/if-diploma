@@ -11,6 +11,7 @@ import { basketDataLengthSelector } from "../../redux/ducks/basketAdditing/baske
 import {useDispatch, useSelector} from "react-redux";
 import {setAuthorize} from "../../redux/ducks/authorization/authoriz_actions";
 import {useNavigate} from "react-router";
+import {generateSearchingString} from "../../redux/ducks/searchingString/searchingString_actions";
 
 const Header = ({ isDark }) => {
 
@@ -41,6 +42,15 @@ const Header = ({ isDark }) => {
       navigate('/')
     }else{
       navigate('/authorization')
+    }
+  }
+
+  const handleKeyDown = (e) =>{
+    if(e.code === 'Enter'){
+      dispatch(generateSearchingString(e.target.value));
+      console.log(e.target.value);
+      e.target.value = '';
+      setActiveSearch(false);
     }
   }
 
@@ -98,7 +108,7 @@ const Header = ({ isDark }) => {
 
       <div className={`${activeSearch ? 'header_modal-search_active' :  'header_modal-search'}`}>
         <div className="header_modal-close-block" onClick={handleSearchCloseClick}></div>
-        <input type="text" placeholder='ENTER SEARCH TERMS' value={searchValue} onChange={handleChange} />
+        <input type="text" placeholder='ENTER SEARCH TERMS' value={searchValue} onChange={handleChange} onKeyDown={handleKeyDown} />
       </div>
     </div>
   );
